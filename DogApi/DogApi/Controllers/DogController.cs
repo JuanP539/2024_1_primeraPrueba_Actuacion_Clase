@@ -1,6 +1,8 @@
 ﻿using IBusinessLogic;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Models.In;
+using Models.Out;
 
 namespace DogApi.Controllers
 {
@@ -15,15 +17,17 @@ namespace DogApi.Controllers
         }
 
         [HttpGet]
-        public ActionResult Get()
+        public ActionResult GetDogs([FromQuery] DogGetModel dogGetModel)
         {
-            throw new NotImplementedException();
+            DogGetModelOut dogModelOut = new DogGetModelOut(_dogLogic.GetByName(dogGetModel.ToEntity()));
+            return Ok(dogModelOut);
         }
 
         [HttpPost]
-        public ActionResult Create()
+        public ActionResult Create([FromBody] DogCreateModel dogCreateModel)
         {
-            throw new NotImplementedException();
+            DogCreateModelOut dogModelOut = new DogCreateModelOut(_dogLogic.CreateDog(dogCreateModel.ToEntity()));
+            return Ok(dogModelOut);
         }
     }
 }

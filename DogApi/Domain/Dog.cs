@@ -11,7 +11,6 @@ namespace Domain
         public string Breed { get; set; }
         public string Description { get; set; }
         public bool Hypoalergenic { get; set; }
-        public ICollection<string> Facts { get; set; }
 
         public Dog() { }
     }

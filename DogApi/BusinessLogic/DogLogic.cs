@@ -17,12 +17,12 @@ namespace BusinessLogic
             _dogRepo = dogRepo;
         }
 
-        public List<Dog> Get()
+        public Dog GetByName(Dog dog)
         {
             throw new NotImplementedException();
         }
 
-        public Dog Create(Dog newDog)
+        public Dog CreateDog(Dog newDog)
         {
             throw new NotImplementedException();
         }

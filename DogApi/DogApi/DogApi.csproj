@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\IBusinessLogic\IBusinessLogic.csproj" />
+    <ProjectReference Include="..\Models\Models.csproj" />
     <ProjectReference Include="..\ServiceFactory\ServiceFactory.csproj" />
   </ItemGroup>
 

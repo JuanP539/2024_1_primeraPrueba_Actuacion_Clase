@@ -9,7 +9,7 @@ namespace IBusinessLogic
 {
     public interface IDogLogic
     {
-        public List<Dog> Get();
-        public Dog Create(Dog newDog);
+        public Dog GetByName(Dog dog);
+        public Dog CreateDog(Dog newDog);
     }
 }
