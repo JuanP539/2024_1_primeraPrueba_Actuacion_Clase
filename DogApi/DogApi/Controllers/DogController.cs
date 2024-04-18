@@ -10,12 +10,13 @@ namespace DogApi.Controllers
     [Route("api/dogs")]
     public class DogController : ControllerBase
     {
+        //Inyeccion de dependencias
         private readonly IDogLogic _dogLogic;
         public DogController(IDogLogic dogLogic) 
         {
             _dogLogic = dogLogic;
         }
-
+        //Este metodo
         [HttpGet]
         public ActionResult GetDogs([FromQuery] DogGetModel dogGetModel)
         {
