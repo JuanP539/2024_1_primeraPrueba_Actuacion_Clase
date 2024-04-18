@@ -27,7 +27,7 @@ namespace DogApi.Controllers
         public ActionResult Create([FromBody] DogCreateModel dogCreateModel)
         {
             DogCreateModelOut dogModelOut = new DogCreateModelOut(_dogLogic.CreateDog(dogCreateModel.ToEntity()));
-            return Ok(dogModelOut);
+            return CreatedAtAction(nameof(Create), dogModelOut);
         }
     }
 }
