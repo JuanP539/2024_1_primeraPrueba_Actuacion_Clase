@@ -31,7 +31,7 @@ namespace DogApiTest
         }
 
         [TestMethod]
-        public void GetDogsOk() 
+        public void CreateDogsOk() 
         {
             DogCreateModelOut expectedResult = new DogCreateModelOut() {Breed = _d.Breed, Description = _d.Description, Hypoalergenic = _d.Hypoalergenic };
             DogCreateModel dogCreateModel = new DogCreateModel() { Breed = _d.Breed, Description = _d.Description, Hypoalergenic = _d.Hypoalergenic };
@@ -42,6 +42,23 @@ namespace DogApiTest
             var result = dogController.Create(dogCreateModel);
             var okResult = result as CreatedAtActionResult;
             var content = okResult.Value as DogCreateModelOut;
+
+            mockDogLogic.VerifyAll();
+            Assert.AreEqual(expectedResult, content);
+        }
+
+        [TestMethod]
+        public void GetDogsOk() 
+        {
+            DogGetModelOut expectedResult = new DogGetModelOut() { Breed = _d.Breed, Description = _d.Description, Hypoalergenic = _d.Hypoalergenic };
+            DogGetModel dogCreateModel = new DogGetModel() { Breed = _d.Breed};
+            var mockDogLogic = new Mock<IDogLogic>(MockBehavior.Strict);
+            mockDogLogic.Setup(x => x.GetByName(It.IsAny<Dog>())).Returns(_d);
+            var dogController = new DogController(mockDogLogic.Object);
+
+            var result = dogController.GetDogs(dogCreateModel);
+            var okResult = result as OkObjectResult;
+            var content = okResult.Value as DogGetModelOut;
 
             mockDogLogic.VerifyAll();
             Assert.AreEqual(expectedResult, content);
