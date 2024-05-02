@@ -51,7 +51,13 @@ namespace DataAccess
                             Hypoalergenic = false
                         }
                     );
-
+                    instance.AddUser(
+                        new User() 
+                        {
+                            Id= 3,
+                            Token = new Guid("C1B94565-BDF1-4C16-B890-2DD46328227A")
+                        }
+                    );
                 }
                 return instance;
             }
