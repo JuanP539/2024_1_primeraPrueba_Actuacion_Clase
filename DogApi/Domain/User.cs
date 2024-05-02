@@ -6,13 +6,9 @@ using System.Threading.Tasks;
 
 namespace Domain
 {
-    public class Dog
+    public class User
     {
         public int Id { get; set; }
-        public string Breed { get; set; }
-        public string Description { get; set; }
-        public bool Hypoalergenic { get; set; }
-
-        public Dog() { }
+        public Guid Token { get; set; }
     }
 }

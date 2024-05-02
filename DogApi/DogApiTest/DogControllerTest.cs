@@ -29,7 +29,7 @@ namespace DogApiTest
                 Hypoalergenic = false
             };
         }
-
+        //Esto lo podemos sacar
         [TestMethod]
         public void CreateDogsOk() 
         {
@@ -47,7 +47,7 @@ namespace DogApiTest
             Assert.AreEqual(expectedResult, content);
         }
 
-        //Esto
+        //Esto lo tienen que hacer
         [TestMethod]
         public void GetDogsOk() 
         {

@@ -1,6 +1,5 @@
 ﻿using BusinessLogic;
 using DataAccess;
-using DataAccess.Context;
 using IBusinessLogic;
 using IDataAccess;
 using Microsoft.EntityFrameworkCore;
@@ -20,10 +19,6 @@ namespace ServiceFactory
             //Agreguen el Scoped
             serviceCollection.AddScoped<IDogLogic, DogLogic>();
             serviceCollection.AddScoped<IDogRepository, DogRepository>();
-        }
-        public static void AddConnectionString(this IServiceCollection serviceCollection)
-        {
-            serviceCollection.AddDbContext<DbContext, DogContext>();
         }
     }
 }
