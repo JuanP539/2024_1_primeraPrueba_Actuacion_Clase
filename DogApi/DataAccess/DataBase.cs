@@ -77,9 +77,10 @@ namespace DataAccess
             return dogs;
         }
 
-        public void AddDog(Dog dog)
+        public Dog AddDog(Dog dog)
         {
             dogs.Add(dog);
+            return dog;
         }
 
         public void UpdateDog(Dog dog)

@@ -16,7 +16,7 @@ namespace ServiceFactory
     {
         public static void AddServices(IServiceCollection serviceCollection)
         {
-            //Agreguen el Scoped
+            //Tienen que hacer esto
             serviceCollection.AddScoped<IDogLogic, DogLogic>();
             serviceCollection.AddScoped<IDogRepository, DogRepository>();
         }

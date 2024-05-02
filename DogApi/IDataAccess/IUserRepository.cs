@@ -8,5 +8,6 @@ namespace IDataAccess
 {
     public interface IUserRepository
     {
+        public Guid GetUserToken();
     }
 }

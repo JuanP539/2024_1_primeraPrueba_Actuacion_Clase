@@ -12,11 +12,13 @@ namespace DataAccess
     {
         public List<Dog> Get()
         {
-            throw new NotImplementedException();
+            List<Dog> dogs = DataBase.Instance.GetDogs();
+            return dogs;
         }
         public Dog Create(Dog newDog)
         {
-            throw new NotImplementedException();
+            Dog dog = DataBase.Instance.AddDog(newDog);
+            return dog;
         }
     }
 }
