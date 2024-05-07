@@ -9,7 +9,7 @@ namespace IDataAccess
 {
     public interface IDogRepository
     {
-        public List<Dog> Get();
+        public Dog GetByBreed(string breed);
         public Dog Create(Dog newDog);
     }
 }

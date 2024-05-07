@@ -11,20 +11,20 @@ namespace DogApi.Controllers
     [Route("api/dogs")]
     public class DogController : ControllerBase
     {
-        //Tienen que hacer esto
+        //TODO Inyección dependencia
         private readonly IDogLogic _dogLogic;
         public DogController(IDogLogic dogLogic) 
         {
             _dogLogic = dogLogic;
         }
-        //Tienen que hacer esto
+        //TODO linea 23 y 24
         [HttpGet]
         public ActionResult GetDogs([FromQuery] DogGetModel dogGetModel)
         {
             DogGetModelOut dogModelOut = new DogGetModelOut(_dogLogic.GetByBreed(dogGetModel.ToEntity()));
             return Ok(dogModelOut);
         }
-        //Tienen que hacer esto
+        //TODO line 33 y 34
         [HttpPost]
         [AuthenticationFilter]
         public ActionResult Create([FromBody] DogCreateModel dogCreateModel)

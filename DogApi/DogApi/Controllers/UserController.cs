@@ -7,12 +7,13 @@ namespace DogApi.Controllers
 {
     public class UserController : Controller
     {
+        //TODO Inyeccion de dependencia
         private readonly IUserLogic _userLogic;
         public UserController(IUserLogic userLogic)
         {
             _userLogic = userLogic;
         }
-        //Tienen que hacer esto
+        //TODO linea 21 y 22
         [HttpPost]
         [Route("sessions")]
         public IActionResult Login([FromBody] UserLoginModel loginModel)

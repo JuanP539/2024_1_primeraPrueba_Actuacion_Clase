@@ -1,6 +1,8 @@
 ﻿using Domain;
 using IBusinessLogic;
+using IBusinessLogic.Exceptions;
 using IDataAccess;
+using IDataAccess.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,12 +21,30 @@ namespace BusinessLogic
 
         public Dog GetByBreed(Dog dog)
         {
-            throw new NotImplementedException();
+            Dog ret;
+            try
+            {
+                ret = _dogRepo.GetByBreed(dog.Breed);
+            }
+            catch (DataNotFoundException)
+            {
+                throw new DogNotFoundException();
+            }   
+            return ret;
         }
 
         public Dog CreateDog(Dog newDog)
         {
-            throw new NotImplementedException();
+            Dog ret;
+            try
+            {
+                ret = _dogRepo.Create(newDog);
+            }
+            catch (DataNotFoundException)
+            {
+                throw new AlreadyExistingDogException();
+            }
+            return ret;
         }
     }
 }

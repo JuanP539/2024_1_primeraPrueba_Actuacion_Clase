@@ -9,7 +9,7 @@ namespace Models.In
 {
     public class DogGetModel
     {
-        public string? Breed { get; set; }
+        public string Breed { get; set; }
 
         public Dog ToEntity()
         {
