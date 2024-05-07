@@ -34,7 +34,6 @@ namespace BusinessLogic
         public Guid GetUserToken(string email, string password)
         {
             Guid ret;
-
             try
             {
                 ret = _userRepository.GetUserToken(email, password);

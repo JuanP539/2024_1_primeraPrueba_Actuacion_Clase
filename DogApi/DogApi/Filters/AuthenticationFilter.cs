@@ -11,7 +11,7 @@ namespace DogApi.Filters
             var token = context.HttpContext.Request.Headers["Authorization"];
             if (String.IsNullOrEmpty(token))
             {
-                context.Result = new ObjectResult("Authorization header must needed") { StatusCode = 401 };
+                context.Result = new ObjectResult("Authorization header is needed") { StatusCode = 401 };
             }
             else if (!Guid.TryParse(token, out Guid parsedToken))
             {

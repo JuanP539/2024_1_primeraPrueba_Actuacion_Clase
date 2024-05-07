@@ -18,7 +18,9 @@ namespace ServiceFactory
         {
             //TODO AddScopes
             serviceCollection.AddScoped<IDogLogic, DogLogic>();
+            serviceCollection.AddScoped<IUserLogic, UserLogic>();
             serviceCollection.AddScoped<IDogRepository, DogRepository>();
+            serviceCollection.AddScoped<IUserRepository, UserRepository>();
         }
     }
 }

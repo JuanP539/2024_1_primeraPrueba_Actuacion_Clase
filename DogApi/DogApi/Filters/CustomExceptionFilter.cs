@@ -16,7 +16,7 @@ namespace DogApi.Filters
                     StatusCode = 404
                 };
             }
-            //TODO este if
+            //TODO copy paste del anterior
             if (context.Exception is DogNotFoundException)
             {
                 context.Result = new ObjectResult(new { ErrorMessage = context.Exception.Message })
@@ -24,7 +24,7 @@ namespace DogApi.Filters
                     StatusCode = 404
                 };
             }
-            //TODO este if
+            //TODO copy paste del anterior
             if (context.Exception is AlreadyExistingDogException)
             {
                 context.Result = new ObjectResult(new { ErrorMessage = context.Exception.Message })

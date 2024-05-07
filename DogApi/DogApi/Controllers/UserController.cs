@@ -5,6 +5,8 @@ using Models.Out;
 
 namespace DogApi.Controllers
 {
+    [ApiController]
+    [Route("api/users")]
     public class UserController : Controller
     {
         //TODO Inyeccion de dependencia
