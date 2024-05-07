@@ -9,6 +9,7 @@ namespace DogApi.Filters
         public void OnAuthorization(AuthorizationFilterContext context)
         {
             var token = context.HttpContext.Request.Headers["Authorization"];
+            //TODO estos 3 if
             if (String.IsNullOrEmpty(token))
             {
                 context.Result = new ObjectResult("Authorization header is needed") { StatusCode = 401 };
@@ -30,7 +31,7 @@ namespace DogApi.Filters
                     context.HttpContext.Items["CurrentUser"] = sessionService.GetUserByToken(parsedToken);
             }
         }
-        IUserLogic GetUserLogic(AuthorizationFilterContext context)
+        private IUserLogic GetUserLogic(AuthorizationFilterContext context)
         {
             var sessionManagerObject = context.HttpContext.RequestServices.GetService(typeof(IUserLogic));
             var sessionService = sessionManagerObject as IUserLogic;
