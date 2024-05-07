@@ -21,7 +21,7 @@ namespace DogApi.Controllers
         [HttpGet]
         public ActionResult GetDogs([FromQuery] DogGetModel dogGetModel)
         {
-            DogGetModelOut dogModelOut = new DogGetModelOut(_dogLogic.GetByName(dogGetModel.ToEntity()));
+            DogGetModelOut dogModelOut = new DogGetModelOut(_dogLogic.GetByBreed(dogGetModel.ToEntity()));
             return Ok(dogModelOut);
         }
         //Tienen que hacer esto

@@ -60,7 +60,7 @@ namespace DogApiTest
             DogGetModelOut expectedResult = new DogGetModelOut() { Breed = _d.Breed, Description = _d.Description, Hypoalergenic = _d.Hypoalergenic };
             DogGetModel dogCreateModel = new DogGetModel() { Breed = _d.Breed};
             var mockDogLogic = new Mock<IDogLogic>(MockBehavior.Strict);
-            mockDogLogic.Setup(x => x.GetByName(It.IsAny<Dog>())).Returns(_d);
+            mockDogLogic.Setup(x => x.GetByBreed(It.IsAny<Dog>())).Returns(_d);
             var dogController = new DogController(mockDogLogic.Object);
 
             var result = dogController.GetDogs(dogCreateModel);

@@ -1,21 +1,22 @@
+using DogApi.Filters;
 using ServiceFactory;
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
-builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddControllers(option =>
+{
+    //TODO Filters.Add
+    option.Filters.Add<CustomExceptionFilter>();
+});
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 
-//Tienen que hacer esto
+//TODO AddServices
 DogServiceFactory.AddServices(builder.Services);
 
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();

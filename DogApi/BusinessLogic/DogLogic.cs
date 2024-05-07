@@ -17,7 +17,7 @@ namespace BusinessLogic
             _dogRepo = dogRepo;
         }
 
-        public Dog GetByName(Dog dog)
+        public Dog GetByBreed(Dog dog)
         {
             throw new NotImplementedException();
         }
