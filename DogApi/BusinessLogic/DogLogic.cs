@@ -21,30 +21,28 @@ namespace BusinessLogic
 
         public Dog GetByBreed(Dog dog)
         {
-            Dog ret;
+            //TODO
             try
             {
-                ret = _dogRepo.GetByBreed(dog.Breed);
+                return _dogRepo.GetByBreed(dog.Breed);
             }
             catch (DataNotFoundException)
             {
                 throw new DogNotFoundException();
-            }   
-            return ret;
+            }
         }
 
         public Dog CreateDog(Dog newDog)
         {
-            Dog ret;
+            //TODO catch
             try
             {
-                ret = _dogRepo.Create(newDog);
+                return _dogRepo.Create(newDog);
             }
             catch (DataNotFoundException)
             {
                 throw new AlreadyExistingDogException();
             }
-            return ret;
         }
     }
 }

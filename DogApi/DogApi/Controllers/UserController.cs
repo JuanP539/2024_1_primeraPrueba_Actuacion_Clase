@@ -15,7 +15,7 @@ namespace DogApi.Controllers
         {
             _userLogic = userLogic;
         }
-        //TODO linea 21 y 22
+        //TODO parametro, linea 23 y 24
         [HttpPost]
         [Route("sessions")]
         public IActionResult Login([FromBody] UserLoginModel loginModel)
