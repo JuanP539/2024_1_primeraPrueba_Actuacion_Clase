@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc.Filters;
+﻿using IBusinessLogic.Exceptions;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
 
 namespace DogApi.Filters
 {
@@ -6,7 +8,14 @@ namespace DogApi.Filters
     {
         public void OnException(ExceptionContext context)
         {
-            throw new NotImplementedException();
+            if (context.Exception is UserNotFoundException)
+            {
+                //Tienen que hacer esto
+                context.Result = new ObjectResult(new { ErrorMessage = context.Exception.Message })
+                {
+                    StatusCode = 404
+                };
+            }
         }
     }
 }

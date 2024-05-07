@@ -55,7 +55,9 @@ namespace DataAccess
                         new User() 
                         {
                             Id= 3,
-                            Token = new Guid("C1B94565-BDF1-4C16-B890-2DD46328227A")
+                            Token = new Guid("C1B94565-BDF1-4C16-B890-2DD46328227A"),
+                            Email = "ort@gmail.com",
+                            Password = "123"
                         }
                     );
                 }

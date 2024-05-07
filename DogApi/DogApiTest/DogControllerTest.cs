@@ -25,7 +25,13 @@ namespace DogApiTest
             _d = new Dog() 
             {
                 Breed = "Caucasian Shepherd Dog",
-                Description = "The Caucasian Shepherd Dog is a large and powerful breed of dog from the Caucasus Mountains region. These dogs are large in size, with a thick double coat to protect them from the cold. They have a regal bearing, with a proud and confident demeanor. They are highly intelligent and loyal, making them excellent guard dogs. They are courageous and alert, with an instinct to protect their family and property. They are highly trainable, but require firm and consistent training.",
+                Description = "The Caucasian Shepherd Dog is a large and powerful breed " +
+                "of dog from the Caucasus Mountains region. These dogs are large in size," +
+                " with a thick double coat to protect them from the cold. They have a regal" +
+                " bearing, with a proud and confident demeanor. They are highly intelligent" +
+                " and loyal, making them excellent guard dogs. They are courageous and alert" +
+                ", with an instinct to protect their family and property. They are highly " +
+                "trainable, but require firm and consistent training.",
                 Hypoalergenic = false
             };
         }

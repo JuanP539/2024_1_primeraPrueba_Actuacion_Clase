@@ -10,5 +10,7 @@ namespace IBusinessLogic
     public interface IUserLogic
     {
         Guid GetUserToken(string email, string password);
+        public bool IsTheCorrectUser(Guid userToken);
+        public User GetUserByToken(Guid userToken);
     }
 }
