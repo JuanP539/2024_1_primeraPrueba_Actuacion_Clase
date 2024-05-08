@@ -1,4 +1,4 @@
-- 2024_1_primeraPrueba_Actuacion_Clase
+### 2024_1_primeraPrueba_Actuacion_Clase
 
 Se tiene de base un códgio incompleto, terminar esta solución para que cumpla con los siguientes requerimientos: 
 

@@ -20,9 +20,8 @@ namespace DogApi.Filters
             else
             {
                 var sessionService = GetUserLogic(context);
+                //TODO
                 bool correctUser = sessionService.IsTheCorrectUser(parsedToken);
-
-                //TODO este if else
                 if (!correctUser)
                 {
                     context.Result = new ObjectResult("The token does not correspond to a existing user") { StatusCode = 401 };
