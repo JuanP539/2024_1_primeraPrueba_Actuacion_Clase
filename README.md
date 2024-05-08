@@ -25,5 +25,5 @@ Para un email y contraseña se debe retornar el token en caso de que exista. En 
 Notas:
 - Existe un único usuario registrado en la base de datos.
 - Ya tienen implementada una capa de acceso a datos con acceso a una base de datos en memoria que funciona. No deben modificar esto (no les conviene :D )
-- La prueba es individual, con material, y el límite es de 45 minutos.
+- La prueba es individual y con material.
 - No se olviden de pushear sus cambios antes del límite de tiempo
