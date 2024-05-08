@@ -4,7 +4,6 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers(option =>
 {
-    //TODO Filters.Add
     option.Filters.Add<CustomExceptionFilter>();
 });
 builder.Services.AddEndpointsApiExplorer();

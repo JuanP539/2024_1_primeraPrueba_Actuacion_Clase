@@ -35,12 +35,12 @@ namespace DogApiTest
                 Hypoalergenic = false
             };
         }
-        //TODO agregar Strict, VerifyAll, linea 45 a 50
+        //TODO agregar linea 46 a 50
         [TestMethod]
         public void CreateDogsOk() 
         {
             DogCreateModelOut expectedResult = new DogCreateModelOut() {Breed = _d.Breed, Description = _d.Description, Hypoalergenic = _d.Hypoalergenic };
-            DogCreateModel dogCreateModel = new DogCreateModel() { Breed = _d.Breed, Description = _d.Description, Hypoalergenic = _d.Hypoalergenic };
+            DogCreateModelIn dogCreateModel = new DogCreateModelIn() { Breed = _d.Breed, Description = _d.Description, Hypoalergenic = _d.Hypoalergenic };
             var mockDogLogic = new Mock<IDogLogic>(MockBehavior.Strict);
             mockDogLogic.Setup(x => x.CreateDog(It.IsAny<Dog>())).Returns(_d);
             var dogController = new DogController(mockDogLogic.Object);
@@ -53,12 +53,12 @@ namespace DogApiTest
             Assert.AreEqual(expectedResult, content);
         }
 
-        //TODO agregar Strict, VerifyAll, linea 63 a 68
+        //TODO agregar linea 64 a 68
         [TestMethod]
         public void GetDogsOk() 
         {
             DogGetModelOut expectedResult = new DogGetModelOut() { Breed = _d.Breed, Description = _d.Description, Hypoalergenic = _d.Hypoalergenic };
-            DogGetModel dogCreateModel = new DogGetModel() { Breed = _d.Breed};
+            DogGetModelIn dogCreateModel = new DogGetModelIn() { Breed = _d.Breed};
             var mockDogLogic = new Mock<IDogLogic>(MockBehavior.Strict);
             mockDogLogic.Setup(x => x.GetByBreed(It.IsAny<Dog>())).Returns(_d);
             var dogController = new DogController(mockDogLogic.Object);

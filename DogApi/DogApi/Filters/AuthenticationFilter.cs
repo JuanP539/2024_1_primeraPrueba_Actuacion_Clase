@@ -9,7 +9,6 @@ namespace DogApi.Filters
         public void OnAuthorization(AuthorizationFilterContext context)
         {
             var token = context.HttpContext.Request.Headers["Authorization"];
-            //TODO estos 3 if
             if (String.IsNullOrEmpty(token))
             {
                 context.Result = new ObjectResult("Authorization header is needed") { StatusCode = 401 };
@@ -23,6 +22,7 @@ namespace DogApi.Filters
                 var sessionService = GetUserLogic(context);
                 bool correctUser = sessionService.IsTheCorrectUser(parsedToken);
 
+                //TODO este if else
                 if (!correctUser)
                 {
                     context.Result = new ObjectResult("The token does not correspond to a existing user") { StatusCode = 401 };
