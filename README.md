@@ -2,7 +2,7 @@
 
 ## Se tiene de base un códgio incompleto, terminar esta solución para que cumpla con los siguientes requerimientos:
 
-### Post y Get de Perro:
+### Creacion y Obtención de Perro:
 En el post se debe mandar la raza, descripcion y si es hipoalergenico o no.
 En el get se debe obtener la raza, descripcion y si es hipoalergenico o no.
 
