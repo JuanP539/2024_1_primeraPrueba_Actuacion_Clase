@@ -19,7 +19,7 @@ namespace DogApi.Controllers
         [Route("sessions")]
         public IActionResult Login([FromBody] UserLoginModelIn loginModel)
         {
-            UserLoginResponseModel userLoginResponse = new UserLoginResponseModel(_userLogic.GetUserToken(loginModel.Email, loginModel.Password));
+            UserLoginModelOut userLoginResponse = new UserLoginModelOut(_userLogic.GetUserToken(loginModel.Email, loginModel.Password));
             return CreatedAtAction(nameof(Login), userLoginResponse);
         }
     }

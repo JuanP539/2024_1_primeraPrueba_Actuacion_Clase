@@ -16,7 +16,6 @@ namespace DogApiTest
     [TestClass]
     public class DogControllerTest
     {
-        private IDogLogic _dogLogic;
         private Dog _d;
 
         [TestInitialize]
