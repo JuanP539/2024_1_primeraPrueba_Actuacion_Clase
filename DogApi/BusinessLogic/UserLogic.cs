@@ -21,7 +21,7 @@ namespace BusinessLogic
 
         public User GetUserByToken(Guid userToken)
         {
-            //TODO
+            //TODO catcha
             try
             {
                 return _userRepository.FindByToken(userToken);
@@ -34,7 +34,7 @@ namespace BusinessLogic
 
         public Guid GetUserToken(string email, string password)
         {
-            //TODO
+            //TODO catcha
             try
             {
                 return _userRepository.GetUserToken(email, password);
@@ -47,7 +47,7 @@ namespace BusinessLogic
 
         public bool IsTheCorrectUser(Guid userToken)
         {
-            //TODO
+            //TODO catcha
             try
             {
                 return _userRepository.ExistUserByToken(userToken);

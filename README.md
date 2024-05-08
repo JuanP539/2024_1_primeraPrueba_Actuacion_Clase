@@ -20,7 +20,7 @@ Para un email y contraseña se debe retornar el token en caso de que exista. En 
 
 - Hacer que funcione la inyección de dependencias
 
-- Completar los dos test dentro de DogControllerTest
+- Completar el test que corresponda con la funcionalidad seleccionada dentro de DogControllerTest/UserControllerTest
 
 Notas:
 - Existe un único usuario registrado en la base de datos.
