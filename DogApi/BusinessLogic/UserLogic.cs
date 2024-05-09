@@ -14,48 +14,24 @@ namespace BusinessLogic
     public class UserLogic : IUserLogic
     {
         private IUserRepository _userRepository;
-        public UserLogic(IUserRepository userRepository) 
+        public UserLogic(IUserRepository userRepository)
         {
             _userRepository = userRepository;
         }
 
         public User GetUserByToken(Guid userToken)
         {
-            //TODO catcha if needed
-            try
-            {
-                return _userRepository.FindByToken(userToken);
-            }
-            catch (DataNotFoundException)
-            {
-                throw new UserNotFoundException();
-            }
+            return _userRepository.FindByToken(userToken);
         }
 
         public Guid GetUserToken(string email, string password)
         {
-            //TODO catcha if needed
-            try
-            {
-                return _userRepository.GetUserToken(email, password);
-            }
-            catch (DataNotFoundException)
-            {
-                throw new UserNotFoundException();
-            }
+            return _userRepository.GetUserToken(email, password);
         }
 
         public bool IsTheCorrectUser(Guid userToken)
         {
-            //TODO catch if needed
-            try
-            {
-                return _userRepository.ExistUserByToken(userToken);
-            }
-            catch (DataNotFoundException)
-            {
-                throw new UserNotFoundException();
-            }
+            return _userRepository.ExistUserByToken(userToken);
         }
     }
 }

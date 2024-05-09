@@ -21,13 +21,5 @@ namespace Models.Out
             Description = dog.Description;
             Hypoalergenic = dog.Hypoalergenic;
         }
-        //TODO if needed
-        public override bool Equals(object? obj)
-        {
-            return obj is DogGetModelOut @out &&
-                   Breed == @out.Breed &&
-                   Description == @out.Description &&
-                   Hypoalergenic == @out.Hypoalergenic;
-        }
     }
 }

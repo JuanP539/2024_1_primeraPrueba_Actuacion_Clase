@@ -29,22 +29,15 @@ namespace DogApiTest
                 Password = "123"
             };
         }
-        //TODO lines 39 a 44
         [TestMethod]
         public void GetUserTokenOk()
         {
             UserLoginModelIn userCreateModel = new UserLoginModelIn() {Email = "ort@gmail.com", Password = "123"};
             UserLoginModelOut expectedResult = new UserLoginModelOut() {Token = _user.Token };
             var mockUserLogic = new Mock<IUserLogic>(MockBehavior.Strict);
-            mockUserLogic.Setup(x => x.GetUserToken(It.IsAny<string>(), It.IsAny<string>())).Returns(_user.Token);
-            var userController = new UserController(mockUserLogic.Object);
-
-            var result = userController.GetUserToken(userCreateModel);
-            var okResult = result as OkObjectResult;
-            var content = okResult.Value as UserLoginModelOut;
 
             mockUserLogic.VerifyAll();
-            Assert.AreEqual(expectedResult, content);
+            Assert.AreEqual(expectedResult, null);
         }
     }
 }

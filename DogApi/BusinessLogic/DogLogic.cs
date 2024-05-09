@@ -14,35 +14,19 @@ namespace BusinessLogic
     public class DogLogic : IDogLogic
     {
         private IDogRepository _dogRepo;
-        public DogLogic(IDogRepository dogRepo) 
+        public DogLogic(IDogRepository dogRepo)
         {
             _dogRepo = dogRepo;
         }
 
         public Dog GetByBreed(Dog dog)
         {
-            //TODO catch if needed
-            try
-            {
-                return _dogRepo.GetByBreed(dog.Breed);
-            }
-            catch (DataNotFoundException)
-            {
-                throw new DogNotFoundException();
-            }
+            return _dogRepo.GetByBreed(dog.Breed);
         }
 
         public Dog CreateDog(Dog newDog)
         {
-            //TODO catch if needed
-            try
-            {
-                return _dogRepo.Create(newDog);
-            }
-            catch (DataNotFoundException)
-            {
-                throw new AlreadyExistingDogException();
-            }
+            return _dogRepo.Create(newDog);
         }
     }
 }

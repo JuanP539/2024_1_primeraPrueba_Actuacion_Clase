@@ -8,30 +8,7 @@ namespace DogApi.Filters
     {
         public void OnException(ExceptionContext context)
         {
-            //TODO if needed
-            if (context.Exception is UserNotFoundException)
-            {
-                context.Result = new ObjectResult(new { ErrorMessage = context.Exception.Message })
-                {
-                    StatusCode = 404
-                };
-            }
-            //TODO if needed
-            if (context.Exception is DogNotFoundException)
-            {
-                context.Result = new ObjectResult(new { ErrorMessage = context.Exception.Message })
-                {
-                    StatusCode = 404
-                };
-            }
-            //TODO if needed
-            if (context.Exception is AlreadyExistingDogException)
-            {
-                context.Result = new ObjectResult(new { ErrorMessage = context.Exception.Message })
-                {
-                    StatusCode = 400
-                };
-            }
+
         }
     }
 }
