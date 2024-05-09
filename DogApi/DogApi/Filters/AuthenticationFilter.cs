@@ -26,8 +26,6 @@ namespace DogApi.Filters
                 {
                     context.Result = new ObjectResult("The token does not correspond to a existing user") { StatusCode = 401 };
                 }
-                else
-                    context.HttpContext.Items["CurrentUser"] = sessionService.GetUserByToken(parsedToken);
             }
         }
         private IUserLogic GetUserLogic(AuthorizationFilterContext context)
