@@ -21,7 +21,7 @@ namespace BusinessLogic
 
         public Dog GetByBreed(Dog dog)
         {
-            //TODO
+            //TODO catch if needed
             try
             {
                 return _dogRepo.GetByBreed(dog.Breed);
@@ -34,7 +34,7 @@ namespace BusinessLogic
 
         public Dog CreateDog(Dog newDog)
         {
-            //TODO catch
+            //TODO catch if needed
             try
             {
                 return _dogRepo.Create(newDog);

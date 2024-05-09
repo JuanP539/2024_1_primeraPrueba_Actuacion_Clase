@@ -34,7 +34,7 @@ namespace DogApiTest
                 Hypoalergenic = false
             };
         }
-        //TODO agregar linea 46 a 50
+        //TODO lines 46 a 50
         [TestMethod]
         public void CreateDogsOk() 
         {
@@ -52,7 +52,7 @@ namespace DogApiTest
             Assert.AreEqual(expectedResult, content);
         }
 
-        //TODO agregar linea 64 a 68
+        //TODO lines 64 a 68
         [TestMethod]
         public void GetDogsOk() 
         {

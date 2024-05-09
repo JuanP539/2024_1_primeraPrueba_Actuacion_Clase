@@ -20,7 +20,7 @@ namespace DogApi.Filters
             else
             {
                 var sessionService = GetUserLogic(context);
-                //TODO
+                //TODO IsTheCorrectUser & if
                 bool correctUser = sessionService.IsTheCorrectUser(parsedToken);
                 if (!correctUser)
                 {
