@@ -18,6 +18,7 @@ namespace DogApi.Controllers
         }
         //TODO linea 23 y 24
         [HttpGet]
+        [AuthenticationFilter]
         public ActionResult GetDogs([FromQuery] DogGetModelIn dogGetModel)
         {
             DogGetModelOut dogModelOut = new DogGetModelOut(_dogLogic.GetByBreed(dogGetModel.ToEntity()));
